@@ -2,7 +2,9 @@
    Do not decorate list items in the post listings
 */
 ul.post-list {
-    list-style-type: none
+    list-style-type: none; 
+    padding: 0; 
+    margin-left: 0; 
 }
 
 a {
@@ -14,8 +16,9 @@ a:hover {
 }
 
 .post-item {
-    max-width: 6in;
-    margin: 20px 20px 50px 20px;
+    max-width: 5.5in;
+    #margin: 20px 20px 50px 20px;
+    margin: 20px auto 50px auto;
     border-bottom: thin dashed #C2C2D6;
 }
 
@@ -52,27 +55,30 @@ a:hover {
 }
 
 .about {
-    width: 6in;
-    margin: 20px 20px 50px 20px;
+    width: 5.5in;
+    margin: 20px auto 50px auto;
 }
 
 .post-date {
-    font-style: italic
-}
-
-.post-meta {
     font-style: italic;
     font-size: 0.75em;
 }
 
+.post-meta {
+    font-style: italic;
+    #font-size: 0.75em;
+}
+
 .post-tags {
-    float: right
+    float: right;
+    font-style: italic;
+    font-size: 0.75em;
 }
 
 #disqus_thread {
     #margin-left: 1in;
-    margin: 20px 20px 50px 20px;
-    max-width: 6in;
+    margin: 20px auto 50px auto;
+    max-width: 5.5in;
 }
 
 #menu {
@@ -88,7 +94,8 @@ a:hover {
 }
 
 #menu li {
-    padding-right: 1em;
+    padding-right: 0.5em;
+    font-size: 0.75em; 
 }
 
 #archive-link {
@@ -97,8 +104,9 @@ a:hover {
     position: fixed;
     right: 0;
     bottom: 0;
-    padding-right: 1em;
-    padding-bottom: 1em;
+    padding-right: 0.5em;
+    padding-bottom: 0.5em;
+    font-size: 0.75em; 
 }
 
 #archive-link ul {
@@ -109,8 +117,19 @@ a:hover {
 }
 
 #tag-cloud {
-    width: 4in
+    max-width: 5.5in;
+    #margin: 20px 20px 50px 20px;
+    margin: 20px auto 50px auto;
+    border-bottom: thin dashed #C2C2D6;
 }
+
+#posts {
+    max-width: 5.5in;
+    #margin: 20px 20px 50px 20px;
+    margin: 20px auto 50px auto;
+    border-bottom: thin dashed #C2C2D6;
+}
+
 
 .post-item-title > a {
     font-style: normal; 
