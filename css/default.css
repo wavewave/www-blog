@@ -1,0 +1,147 @@
+/*
+   Do not decorate list items in the post listings
+*/
+ul.post-list {
+    list-style-type: none
+}
+
+a {
+    color: black;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.post-item {
+    max-width: 6in;
+    margin: 20px 20px 50px 20px;
+    border-bottom: thin dashed #C2C2D6;
+}
+
+.post-content h1 {
+    font-style: normal; 
+    font-family:'Source Sans Pro', sans-serif;
+    font-weight:300; 
+    font-size: 1.5em;
+}
+
+.post-content h2 {
+    font-style: normal; 
+    font-family:'Source Sans Pro', sans-serif;
+    font-weight:300; 
+    font-size: 1.25em;
+}
+
+.post-content h3 {
+    font-style: normal; 
+    font-family:'Source Sans Pro', sans-serif;
+    font-weight:300; 
+    font-size: 1.1em;
+}
+
+.post-content {
+    font-style: normal; 
+    font-family:'Source Sans Pro', sans-serif;
+    font-weight:300; 
+    text-align: justify;
+}
+
+.comment-span {
+    margin-bottom: 20px;
+}
+
+.about {
+    width: 6in;
+    margin: 20px 20px 50px 20px;
+}
+
+.post-date {
+    font-style: italic
+}
+
+.post-meta {
+    font-style: italic;
+    font-size: 0.75em;
+}
+
+.post-tags {
+    float: right
+}
+
+#disqus_thread {
+    #margin-left: 1in;
+    margin: 20px 20px 50px 20px;
+    max-width: 6in;
+}
+
+#menu {
+    position: fixed;
+    right: 0;
+}
+
+#menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: right;
+}
+
+#menu li {
+    padding-right: 1em;
+}
+
+#archive-link {
+    float: right;
+    width: 2in;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    padding-right: 1em;
+    padding-bottom: 1em;
+}
+
+#archive-link ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: right
+}
+
+#tag-cloud {
+    width: 4in
+}
+
+.post-item-title > a {
+    font-style: normal; 
+    font-family:'Source Sans Pro', sans-serif;
+    font-weight:300; 
+    color: black;
+}
+
+.post-item-title > a:hover {
+    font-style: normal; 
+    font-family:'Source Sans Pro', sans-serif;
+    font-weight:300; 
+    text-decoration: none;
+}
+
+.post-title {
+    font-style: normal; 
+    font-family:'Source Sans Pro', sans-serif;
+    font-weight:300; 
+    color: black;
+}
+
+.post-body {
+    font-style: normal; 
+    font-family:'Source Sans Pro', sans-serif;
+    font-weight:300; 
+    color: black;
+    text-align: justify;
+}
+
+.post-date, .post-tags, .post-tags > a {
+    color: #aaaaaa;
+    text-decoration: none;
+}
