@@ -79,14 +79,15 @@ main = do
 
     -- Build tags
     create "tags" $ requireAll "posts/*/*.md" (\_ ps -> readTags ps :: Tags String)
-    match "tags/*" $  do 
-      route $ setExtension ".html"
-      compile $ pageCompiler 
-        >>> relativizeUrlsCompiler
-
+    match "tags/*" $ route $ setExtension ".html"
     metaCompile $ require_ "tags"
       >>> arr tagsMap
       >>> arr (map (\(t, p) -> (tagIdentifier t, makeTagList t p)))
+{- 
+    match "tags/*.html" $ 
+      compile $ pageCompiler 
+        >>> relativizeUrlsCompiler
+-}
 
     match "rss.xml" $ route idRoute
     create "rss.xml" $ requireAll_ "posts/*/*.md"
@@ -119,6 +120,7 @@ makeTagList tag posts =
     >>> arr (setField "title" ("Posts tagged &#8216;" ++ tag ++ "&#8217;"))
     >>> applyTemplateCompiler "templates/index.html"
     >>> applyTemplateCompiler "templates/default.html"
+    >>> relativizeUrlsCompiler
 
 
 -- | This is just like renderDateField, except the format of the
