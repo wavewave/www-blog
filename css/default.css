@@ -1,14 +1,27 @@
 /*
    Do not decorate list items in the post listings
 */
+
+/* .MathJax_Display { 
+   color: #404040
+ } */
+
+.MathJax { 
+  color: #404040
+}
+
 ul.post-list {
     list-style-type: none; 
     padding: 0; 
     margin-left: 0; 
 }
 
+code { 
+   color: #292929;
+}
+
 a {
-    color: black;
+    color: #292929;
 }
 
 a:hover {
@@ -135,7 +148,7 @@ a:hover {
     font-style: normal; 
     font-family:'Source Sans Pro', sans-serif;
     font-weight:300; 
-    color: black;
+    color: #292929;
 }
 
 .post-item-title > a:hover {
@@ -149,7 +162,7 @@ a:hover {
     font-style: normal; 
     font-family:'Source Sans Pro', sans-serif;
     font-weight:300; 
-    color: black;
+    color: #292929;
 }
 
 .post-body {

@@ -3,8 +3,6 @@ title: A Short Note of Hoodle Development
 tags: hoodle, development, haskell 
 ---
 
-_The following is my original statement on hoodle development posted on [http://ianwookim.org/hoodle](http://ianwookim.org/hoodle) for some time._ 
-
 I was a long-time user of <code>xournal</code> and contributed some code 
 to the <code>xournal</code> project myself. The <code>xournal</code> program 
 is excellent and fulfils my need much for jotting notes,  calculating with a pen 
@@ -12,41 +10,49 @@ and annotating papers in pdf format. However, as all the software in the world,
 it needs to be improved. For example, we need more optimal effecient use of 
 small tablet PC screen.  It is also very desirable to have a script for a program.
 On the other hand, <code>xournal</code> is already a stable mature program and 
-has lots of users.
-It seems rather difficult to experiment such interesting features in 
-the <code>xournal</code> project for me. <code>xournal</code> is written in C, 
-which needs great care for maintaining code safely.  
-When I implemented a lasso selection feature for <code>xournal</code> 
-(it is included as of <code>xournal-0.4.7</code>), I found that the internal 
-design should be significantly changed for adding a small interesting feature.
+has lots of users. So it already has a big inertia in accepting new interesting 
+experimental features that I would like to add. 
+
+This situation got much exacerbated for me since <code>xournal</code> is written in C, 
+which needs great care for maintaining code safely. I implemented a lasso selection feature 
+for <code>xournal</code> (it is included as of <code>xournal-0.4.7</code>). 
+When adding such features, it was clear that some internal 
+design need to be significantly changed, but it was hard to follow how memory allocation of 
+variables are managed and how a new code bit affects the entire program. 
 In addition, <code>xournal</code> is
 based on GNOME canvas UI widget, which is one of soon-to-be-deprecated components 
 of the GNOME project.
-This led me to think about writing a new note-taking program from scratch. 
+This led me to think about making a new note-taking program of my own from scratch. 
 
-When I envisioned what the new "xournal" look like, I came up with the idea of "emacs"
+When I envisioned what the new "xournal" should look like, I came up with the idea of "emacs"
  of pen note-taking program. Without doubt, <code>emacs</code> is one of the most
-successful long-lived text editor software. The frame/window/buffer architecture
+successful long-surviving text editor software. It is old but evolves continuously to adjust 
+itself to the needs.
+The frame/window/buffer architecture
 of <code>emacs</code> turned out very flexible accommodating many interesting 
 ideas. Elisp, the LISP language used for <code>emacs</code> scripting, is a very 
 useful machinery for extending and empowering <code>emacs</code>, sometimes very unexpectedly. 
 Such extensibility is in part originated from the fact that 
-ELisp is a functional programming language. By putting a function as a first-class
-citizen of the language, modularity in design is achievable more easily in functional 
-programming languages. Thus, I seriously considered a functional programming language 
-as a main language for the development. 
+elisp is a functional programming language. With functions as first-class
+citizens, modular design is more easily achievable in functional 
+programming languages. Developing a new note taking program in 
+a functional programming language should have similar benefit in design and extensibility. 
 
-So I have chosen haskell for the language. Haskell is a statically typed *pure* 
+
+In this project, I have chosen haskell for the language. Haskell is a statically typed *pure* 
 functional programming language. The language is very clear, concise and elegant.
-The functional purity, which means that a function in haskell is really a function without 
-side effects, shows a great power in concurrent and parallel programming. 
+Purity, which means a function in haskell is a really a function without side effects, is 
+one of the most important properties. Especially in concurrent and parallel programming paradigm, 
+pure functional languages show a great potential and draw big attention in research and industry. 
 The haskell community is rapidly growing and so the library space in haskell is now 
 filled with increasing flow of contributions.  
 Although Graphical User Interface (GUI) programming in haskell is still new and not 
 very common, it turned out that we have enough useful libraries for this development.
-In fact, the haskell community is now seeking for totally new revolutionary directions 
-of GUI programming, so-called *functional reactive programming (FRP)*. 
-(However, in this project, I do not consider switching to FRP paradigm yet.) 
+It is also worth to mention that there is some interesting progress in haskell in seeking 
+for new revolutionary directions of GUI programming, so-called *functional reactive programming (FRP)*. 
+(However, at this moment, I do not consider switching to FRP paradigm yet.) 
+
+
 
 Since November 2011, I started the development under the name of 
 <a href="http://ianwookim.org/hxournal"><code>hxournal</code></a>. The name honors 
@@ -59,4 +65,3 @@ which is significantly smaller than <code>xournal</code> and almost 1/5 of <code
 scripting feature. The scripting feature will provide a similar path to <code>emacs</code> 
 for community-contributed development.  
 
-_This is it. I will refine my statement on <code>hoodle</code> development and keep it up-to-date in this blog._
