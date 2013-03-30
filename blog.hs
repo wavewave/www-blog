@@ -79,7 +79,11 @@ main = do
 
     -- Build tags
     create "tags" $ requireAll "posts/*/*.md" (\_ ps -> readTags ps :: Tags String)
-    match "tags/*" $ route $ setExtension ".html"
+    match "tags/*" $  do 
+      route $ setExtension ".html"
+      compile $ pageCompiler 
+        >>> relativizeUrlsCompiler
+
     metaCompile $ require_ "tags"
       >>> arr tagsMap
       >>> arr (map (\(t, p) -> (tagIdentifier t, makeTagList t p)))
