@@ -22,7 +22,7 @@ URL :
 
 Hoodle is now the simplest publishing program with your own handwriting. Now you can publish articles, 
 doodles, free-form documents and whatever with your unique character. One may use it as a personal
-diary or blog, or may use it as a personal quick-scratch information database as a wiki-like form 
+diary or blog, or a personal quick-scratch information database in a wiki-like form 
 as one wishes.  
 
 Enjoy!

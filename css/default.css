@@ -10,6 +10,16 @@
   color: #404040
 }
 
+.big {
+    background: #202020;
+    color: white;
+    font-style: normal; 
+    font-family:'Source Sans Pro', sans-serif;
+    font-weight:300; 
+    font-size: 1.4em;
+}
+
+
 ul.post-list {
     list-style-type: none; 
     padding: 0; 
@@ -87,6 +97,13 @@ a:hover {
     font-style: italic;
     font-size: 0.75em;
 }
+
+.flattr {
+    float: right;
+    font-style: italic;
+    font-size: 0.75em;
+}
+
 
 #disqus_thread {
     #margin-left: 1in;
