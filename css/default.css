@@ -26,6 +26,15 @@ ul.post-list {
     margin-left: 0; 
 }
 
+pre {
+	background:#edf1f5;
+	border:1px solid #ddd;
+	padding:8px 12px 8px 12px;
+	margin:5px 0;
+	word-wrap:break-word;
+	overflow:hidden;
+}
+
 code { 
    color: #292929;
 }
