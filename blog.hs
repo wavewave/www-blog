@@ -167,7 +167,7 @@ postOrder = sortBy $ comparing $ getField "path"
 
 
 deploysetup :: String -> HakyllConfiguration
-deploysetup s = defaultHakyllConfiguration { 
+deploysetup s = defaultConfiguration { 
                 deployCommand = "rsync -ave 'ssh' _site/* " ++ s  
               } 
 
