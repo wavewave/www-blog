@@ -1,6 +1,7 @@
 ---
 title: poppler 0.12.3 released 
 tags: poppler, haskell
+date: 2014-03-02
 ---
 
 A new version of haskell poppler library is now released. 

@@ -1,6 +1,7 @@
 ---
 title: The first public release of fficxx 
 tags: fficxx, haskell, FFI, binding, C++  
+date: 2013-06-08
 ---
 
 Hello!

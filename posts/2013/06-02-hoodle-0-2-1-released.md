@@ -1,6 +1,7 @@
 ---
 title: hoodle 0.2.1 released 
 tags: hoodle, haskell 
+date: 2013-06-02
 ---
 
 I am happy to announce [Hoodle](http://ianwookim.org/hoodle) v0.2.1.

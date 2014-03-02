@@ -1,6 +1,7 @@
 ---
 title: Make a binding to snappy using fficxx 
 tags: fficxx, haskell, FFI, binding, C++  
+date: 2013-06-15
 ---
 **Disclaimer:** _fficxx is at a very early stage and now under heavy development and hence subject to many changes. This article can be easily outdated when newer versions come. Please refer to [the fficxx main homepage](http://ianwookim.org/fficxx)._
 

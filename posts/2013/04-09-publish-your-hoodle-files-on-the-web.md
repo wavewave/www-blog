@@ -1,6 +1,7 @@
 ---
 title: publish your hoodle files on the web 
 tags: hoodle, haskell 
+date: 2013-04-09
 ---
 
 One of the newest potential killer features of [hoodle](http://ianwookim.org/hoodle) is that hoodle can have hyperlinks to other hoodle 
