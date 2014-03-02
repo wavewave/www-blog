@@ -2,6 +2,8 @@
 import Control.Applicative
 import Data.Monoid ( (<>), mconcat )
 import Hakyll
+import System.Directory 
+import System.FilePath
 
 -- How many posts to show in limited-space contexts
 defaultRecentCount :: Int
@@ -16,7 +18,11 @@ contentSnapshot :: String
 contentSnapshot = "contents"
 
 main :: IO ()
-main = hakyll $ do
+main = do
+  homedir <- getHomeDirectory
+  str <- readFile (homedir </> ".blog")
+  let rdir = head (lines str)
+  hakyllWith (deploysetup rdir) $ do
     match "images/*" $ do
         route   idRoute
         compile copyFileCompiler
@@ -80,7 +86,7 @@ main = hakyll $ do
         route idRoute
         compile $ do
           posts <- constField "posts" <$> postListC tags takeRecent
-          let indexCtx = mconcat [ posts, constField "title" "Blog", defaultContext ]
+          let indexCtx = mconcat [ posts, constField "title" "Ian-Woo Kim's Blog", defaultContext ]
 
           makeItem ""
             >>= loadAndApplyTemplate "templates/index.html" indexCtx
@@ -88,13 +94,13 @@ main = hakyll $ do
             >>= relativizeUrls
 
     -- Build a simple RSS feed with the most recent posts
-    create ["rss.xml"] $ do
-      route idRoute
-      compile $ do
-        allPosts <- loadAllSnapshots postPattern contentSnapshot
-        posts <- takeRecent allPosts
-        let feedCtx = bodyField "description" <> defaultContext
-        renderRss feedConfig feedCtx posts
+    -- create ["rss.xml"] $ do
+    --   route idRoute
+    --   compile $ do
+    --     allPosts <- loadAllSnapshots postPattern contentSnapshot
+    --     posts <- takeRecent allPosts
+    --     let feedCtx = bodyField "description" <> defaultContext
+    --     renderRss feedConfig feedCtx posts
 
     match "templates/*" $ compile templateCompiler
 
@@ -125,11 +131,17 @@ postListC tags sortFilter = do
   itemTpl <- loadBody "templates/postitem.html"
   applyTemplateList itemTpl (postCtx tags) posts
 
-feedConfig :: FeedConfiguration
-feedConfig = FeedConfiguration { feedTitle = "Tristan's Recent Posts"
-                               , feedDescription = "Programming, Haskell, and Linux"
-                               , feedAuthorName = "Tristan Ravitch"
-                               , feedAuthorEmail = "tristan@nochair.net"
-                               , feedRoot = "http://nochair.net"
-                               }
+-- feedConfig :: FeedConfiguration
+-- feedConfig = FeedConfiguration { feedTitle = "Tristan's Recent Posts"
+--                                , feedDescription = "Programming, Haskell, and Linux "
+--                                , feedAuthorName = "Tristan Ravitch"
+--                                , feedAuthorEmail = "tristan@nochair.net"
+--                                , feedRoot = "http://nochair.net"
+--                                }
+
+
+deploysetup :: String -> Configuration
+deploysetup s = defaultConfiguration { 
+                deployCommand = "rsync -ave 'ssh' _site/* " ++ s  
+              } 
 
